@@ -17,6 +17,7 @@ function loadItem() {
 }
 
 function loadContent() {
+  
   // Remove items from cart
   let btnRemove = document.querySelectorAll('#cart-remove');
   btnRemove.forEach((btn) => {
@@ -34,7 +35,7 @@ function loadContent() {
   cartBtns.forEach((btn) => {
     btn.addEventListener('click', addCart);
   });
-
+  
   updateTotal();
 }
 
@@ -118,7 +119,6 @@ function updateTotal() {
 
   totalValue.innerHTML = "$" + total;
 
-
   // Add Product Count in Cart Icon
   const cartCount = document.querySelector('.cart-count');
   let count = itemList.length;
@@ -144,7 +144,6 @@ function placeOrder() {
   updateTotal();
 }
 
-
 // Clear cart
 let clearCart = document.querySelector('.empty-cart').addEventListener('click', emptyCart);
 
@@ -156,6 +155,31 @@ function emptyCart() {
   }
   updateTotal();
 }
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const close = document.getElementById('close');
+const navbar = document.getElementById('navbar');
+const currentLink = document.querySelectorAll('a[href="'+document.URL+'"]');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navbar.classList.add('active');
+    })
+}
+
+if (close) {
+    close.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    })
+}
+
+currentLink.forEach(link => link.className += ' current-link');
+
+
+
+
+
 
 
 

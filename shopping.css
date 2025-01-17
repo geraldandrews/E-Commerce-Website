@@ -1,0 +1,42 @@
+.shopping-container {
+    background: #f1f1f1;
+    padding: 1.5rem 4rem 1.5rem 4rem;
+}
+
+.shopping-container:nth-child(2) {
+    padding: 9rem 4rem 1.5rem 4rem;
+}
+
+.shopping-container h2 {
+    text-align: center;
+}
+
+.shopping-container h1 {
+    color: #248e35;
+    text-align: center;
+    font-weight: 400;
+}
+
+.shopping-container h1 span {
+    color: #248e35;
+}
+
+@media (max-width: 820px) {
+    .shopping-container:nth-child(2) {
+        padding: 9rem 2rem 2rem 2rem;
+    }
+
+    .shopping-container {
+       padding: 1.5rem 2rem 1.5rem 2rem;
+    }
+    
+    .shopping-container .item-card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .shopping-container .item-card {
+        width: 95%;
+    }
+}

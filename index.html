@@ -7,92 +7,268 @@
     integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <title>Shopping Cart</title>
+    <title>Dynamic Sports</title>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <a href="#" class="logo">
-               Apparel Central
-            </a>
-    
-            <div class="cart-logo">
-               <div class="cart-count">0</div>
-               <i class="fas fa-shopping-cart" id="cart-icon"></i>
+    <section id="header">
+        <a href="#"><img src="imgs/logo.png" class="logo" alt="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shopping.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <a href="#" id="close"><i class="fas fa-times"></i></a>
+            </ul>
+        </div>
+
+        <div id="mobile">
+            <i id="hamburger" class="fas fa-bars"></i>
+        </div>
+
+        <div class="cart-logo">
+           <div class="cart-count">0</div>
+           <i class="fas fa-shopping-cart" id="cart-icon"></i>
+        </div>
+
+        <div class="cart">
+            <div class="cart-title">Cart Items</div>
+            <div class="cart-items"></div>
+            <div class="total">
+               <div class="total-title">Total</div>
+               <div class="total-price"></div>
             </div>
     
-            <div class="cart">
-                <div class="cart-title">Cart Items</div>
-                <div class="cart-items"></div>
-                <div class="total">
-                    <div class="total-title">Total</div>
-                    <div class="total-price"></div>
-                </div>
+            <button class="purchase">Place Order</button>
     
-                <button class="purchase">Place Order</button>
-    
-                <i class="fas fa-times" id="cart-close"></i>
-                <div class="empty">
-                    <button class="empty-cart">Empty Cart</button>
-                </div>
+            <i class="fas fa-times" id="cart-close"></i>
+            <div class="empty">
+               <button class="empty-cart">Empty Cart</button>
             </div>
         </div>
-    </header>
-    <div class="container">
-        <h2 class="title">Jackets and Hoodies</h2>
+    </section>
+
+    <section id="hero">
+        <h1>Dynamic <span>Sports</span></h1>
+        <h4>Top quality sports apparel and accessories</h4>
+        <h2>Super value deals</h2>
+        <h3>On all products</h3>
+        <p>Shop on-site at our store location or shop online</p>
+        <button><a href="shopping.html">Shop Now</a></button>
+    </section>
+
+    <section id="features" class="section-p1">
+        <div class="feature-box">
+            <img src="imgs/feature-1.png" alt="free shipping">
+            <h6>Free Shipping</h6>
+        </div>
+        <div class="feature-box">
+            <img src="imgs/feature-2.png" alt="free shipping">
+            <h6>Online Ordering</h6>
+        </div>
+        <div class="feature-box">
+            <img src="imgs/feature-3.png" alt="free shipping">
+            <h6>Save Money</h6>
+        </div>
+        <div class="feature-box">
+            <img src="imgs/feature-4.png" alt="free shipping">
+            <h6>Promotions</h6>
+        </div>
+        <div class="feature-box">
+            <img src="imgs/feature-5.png" alt="free shipping">
+            <h6>Satisfaction</h6>
+        </div>
+        <div class="feature-box">
+            <img src="imgs/feature-6.png" alt="free shipping">
+            <h6>Support</h6>
+        </div>
+    </section>
+
+    <section class="shop-container">
+        <h2>Featured Products</h2>
+        <p>New Spring and Summer Collection</p>
         <div class="shop-items">
             <div class="item-card">
                 <div class="image">
-                   <img src="img/jacket-1.jpg" class="item-img">
+                   <img src="imgs/featured/product-1.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Adidas Hoodie</h2>
-                <span class="item-price">$32.99</span>
+                <h2 class="item-title">Reebok T-Shirt</h2>
+                <span class="item-price">$25.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="item-card">
                 <div class="image">
-                    <img src="img/jacket-2.jpg" class="item-img">
+                    <img src="imgs/featured/product-2.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Adidas Jacket</h2>
+                <h2 class="item-title">Nike T-Shirt 1</h2>
                 <span class="item-price">$28.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="item-card">
                 <div class="image">
-                    <img src="img/jacket-3.jpg" class="item-img">
+                    <img src="imgs/featured/product-3.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Champion Hoodie</h2>
-                <span class="item-price">$30.99</span>
+                <h2 class="item-title">Nike T-Shirt 2</h2>
+                <span class="item-price">$25.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="item-card">
                 <div class="image">
-                    <img src="img/jacket-4.jpg" class="item-img">
+                    <img src="imgs/featured/product-4.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Nike Hoodie</h2>
-                <span class="item-price">$31.99</span>
+                <h2 class="item-title">Adidas T-Shirt 1</h2>
+                <span class="item-price">$23.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="item-card">
                 <div class="image">
-                    <img src="img/jacket-5.jpg" class="item-img">
+                    <img src="imgs/featured/product-5.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Nike Jacket</h2>
-                <span class="item-price">$42.99</span>
+                <h2 class="item-title">Adidas T-Shirt 2</h2>
+                <span class="item-price">$24.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
             <div class="item-card">
                 <div class="image">
-                    <img src="img/jacket-6.jpg" class="item-img">
+                    <img src="imgs/featured/product-6.jpg" class="item-img">
                 </div>
-                <h2 class="item-title">Reebok Hoodie</h2>
-                <span class="item-price">$29.99</span>
+                <h2 class="item-title">Adidas T-Shirt 3</h2>
+                <span class="item-price">$26.99</span>
+                <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+            <div class="item-card">
+                <div class="image">
+                    <img src="imgs/featured/product-7.jpg" class="item-img">
+                </div>
+                <h2 class="item-title">Under Armour T-Shirt 1</h2>
+                <span class="item-price">$25.99</span>
+                <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+            <div class="item-card">
+                <div class="image">
+                    <img src="imgs/featured/product-8.jpg" class="item-img">
+                </div>
+                <h2 class="item-title">Under Armour T-Shirt 2</h2>
+                <span class="item-price">$25.99</span>
                 <button class="add-cart"><i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
-    </div>
-    
-    <div class="footer">
+    </section>
+
+   <section id="banner" class="section-m1">
+        <h4>Shop and Save</h4>
+        <div class="discount">
+           <h2>Up to <span>25% off</span> -- Select t-shirts and Accessories</h2>
+        </div>
+        <button><a href="shopping.html">Explore More</a></button>
+    </section>
+
+    <section id="small-banner" class="section-p1">
+        <div class="advertisement">
+            <div class="ad-text">
+               <h4>Crazy Deals</h4>
+               <h2>Buy 1 Get 1 Free</h2>
+               <span>The best t-shirts are on sale at Dynamic Sports</span>
+            </div>
+            <button>Learn More</button>
+        </div>
+        <div class="advertisement advertisement-2">
+            <div class="ad-text">
+               <h4>Spring/Summer</h4>
+               <h2>Upcoming Season</h2>
+               <span>Cool deals to start warm weather season off right</span>
+            </div>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <section id="mini-banner">
+        <div class="advertisement">
+            <div class="ad-text">
+               <h2>SEASONAL SALE</h2>
+               <h3>Winter Collection -50% OFF</h3>
+            </div>
+        </div> 
+        <div class="advertisement advertisement-2">
+            <div class="ad-text">
+               <h2>New Shoe Collection</h2>
+               <h3>Mens / Womens shoes</h3>
+            </div>
+        </div> 
+        <div class="advertisement advertisement-3">
+            <div class="ad-text">
+               <h2>Latest Apparel</h2>
+               <h3>Shirts and Jackets</h3>
+            </div>
+        </div> 
+    </section>
+
+    <section id="sign-up" class="section-p1 section-m1">
+        <div class="signup-text">
+            <h4>Sign Up For Our Newsletter</h4>
+            <p>Get e-mail updates about our latest products and special offers.</p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Email Address">
+            <button>Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="footer section-p1">
+        <div class="column">
+            <img class="logo" src="imgs/logo.png" alt="logo">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 123 Liberty Blvd., New York NY 10001</p>
+            <p><strong>Phone:</strong> 1-321-555-0100</p>
+            <p><strong>Hours:</strong>  8:00AM - 9:00PM, Mon - Sat</p>
+            <div class="social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="column">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="column-apps">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="app-row">
+                <img src="imgs/app.png" alt="app">
+                <img src="imgs/play.png" alt="play">
+            </div>
+            <p>Secured Payment Options</p>
+            <img src="imgs/payments.png" alt="payments">
+        </div>
+
+        <div class="copyright">
+            <p>&copy 2024 Dynamic Sports. All rights reserved</p>
+        </div>
+    </footer>
+
+    <div class="designer">
         <p>Created and designed by <a href="https://geraldandrewsmedia.netlify.app/" target="_blank">Gerald Andrews Media</a></p>
     </div>
 
