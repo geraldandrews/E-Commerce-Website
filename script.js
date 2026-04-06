@@ -17,7 +17,6 @@ function loadItem() {
 }
 
 function loadContent() {
-  
   // Remove items from cart
   let btnRemove = document.querySelectorAll('#cart-remove');
   btnRemove.forEach((btn) => {
@@ -30,12 +29,11 @@ function loadContent() {
     input.addEventListener('change', changeQty);
   });
 
-  //Product Cart
+  // Product Cart
   let cartBtns = document.querySelectorAll('.add-cart');
   cartBtns.forEach((btn) => {
     btn.addEventListener('click', addCart);
   });
-  
   updateTotal();
 }
 
@@ -45,6 +43,7 @@ function removeItem() {
     let title = this.parentElement.querySelector('.cart-item-title').innerHTML;
     itemList = itemList.filter(el => el.title != title);
     this.parentElement.remove();
+    updateCart();
     loadContent();
   }
 }
@@ -54,10 +53,20 @@ function changeQty() {
   if(isNaN(this.value) || this.value < 1) {
     this.value = 1;
   }
+
+  //getCart(); 
   loadContent();
 }
 
-let itemList = [];
+let itemList = JSON.parse(localStorage.getItem('storedItems')) || [];
+
+itemList.forEach(item => {
+  let element = document.createElement('div'); 
+  element.innerHTML = createCartProduct(item.title, item.price, item.imgSrc);
+  let cartBasket = document.querySelector('.cart-items');
+  cartBasket.append(element);
+});
+
 
 //Add Cart
 function addCart() {
@@ -73,22 +82,28 @@ function addCart() {
      alert("Product is already added to cart.");
         return;
       } else {
-        itemList.push(newProduct);
+        itemList.push(newProduct); 
+
+        updateCart();
+        
   }
 
   let newProductElement = createCartProduct(title, price, imgSrc);
-  let element = document.createElement('div');
-  element.innerHTML = newProductElement;
+  let element = document.createElement('div'); 
+  element.innerHTML = newProductElement;  
   let cartBasket = document.querySelector('.cart-items');
   cartBasket.append(element);
+  loadContent(); 
+}
 
-  loadContent();
+function updateCart() {
+  localStorage.setItem('storedItems', JSON.stringify(itemList));
 }
 
 function createCartProduct(title, price, imgSrc) {
   return `
   <div class="cart-box">
-    <img src="${imgSrc}" class="cart-img">
+    <img src="${imgSrc}" class="cart-img"> 
     <div class="detail-box">
       <div class="cart-item-title">${title}</div>
       <div class="price-box">
@@ -99,7 +114,7 @@ function createCartProduct(title, price, imgSrc) {
     </div>
     <i class="fas fa-trash-alt" id="cart-remove"></i>
   </div>
-  `;
+  `; 
 }
 
 function updateTotal() {
@@ -120,12 +135,13 @@ function updateTotal() {
   totalValue.innerHTML = "$" + total;
 
   // Add Product Count in Cart Icon
+  //let itemList = JSON.parse(localStorage.getItem('storedItems')) || [];
   const cartCount = document.querySelector('.cart-count');
   let count = itemList.length;
   cartCount.innerHTML = count;
 
   if(count == 0) {
-    cartCount.style.display = 'none';
+    cartCount.style.display = 'none'; 
   } else {
     cartCount.style.display = 'block';
   }
@@ -141,6 +157,7 @@ function placeOrder() {
       cartItems.removeChild(cartItems.firstChild)
       itemList = [];
   }
+  localStorage.removeItem('storedItems');
   updateTotal();
 }
 
@@ -153,6 +170,7 @@ function emptyCart() {
       cartItems.removeChild(cartItems.firstChild);
       itemList = [];
   }
+  localStorage.removeItem('storedItems');
   updateTotal();
 }
 
@@ -175,14 +193,3 @@ if (close) {
 }
 
 currentLink.forEach(link => link.className += ' current-link');
-
-
-
-
-
-
-
-
-
-
-
