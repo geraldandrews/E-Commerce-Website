@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-/*body {
-    overflow-x: hidden;
-}*/
-
 /** Global Styles **/
 h6 {
     font-weight: 700;
@@ -52,7 +48,7 @@ p {
 }
 
 #header img {
-    width: 25%;
+    width: 4rem;
 }
 
 #navbar {
